@@ -1,0 +1,647 @@
+/* 1. CSS ЗМІННІ (:root) ТА БАЗОВІ СТИЛІ */
+:root {
+  --color-primary-dark: #2d140b;   
+  --color-light-bg: #f5f5f5;     
+  --color-card-bg: #f9f9f9;        
+  --color-text-main: #111111;     
+  --color-text-muted: #666666;     
+  --color-text-light: #ffffff;     
+  --color-border: #e5e5e5;        
+
+  --font-family-primary: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-sm: 0.875rem; 
+  --font-size-base: 1rem;    
+  --font-size-lg: 1.125rem; 
+  --font-size-xl: 1.5rem;    
+  --font-size-2xl: 2.5rem;
+  --font-size-hero: 5.5rem;   
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --container-width: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-main);
+  background-color: var(--color-light-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.logo-icon-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hero-section .logo-icon-img {
+  filter: invert(1) brightness(2);
+}
+
+.section-bullet-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* 2. HERO SECTION */
+.hero-section {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--color-text-light);
+}
+
+.cart-icon {
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  width: 100%;
+}
+
+.hero-bag-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 650px;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bag-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-text-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.hero-description {
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto 2.5rem;
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-text-light);
+  color: var(--color-text-main);
+}
+
+.btn-primary:hover {
+  background-color: #e6e6e6;
+  transform: translateY(-2px);
+}
+
+.hero-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  z-index: 10;
+}
+
+.scroll-text {
+  letter-spacing: 1px;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* 3. MAIN CONTENT */
+.main-content {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--color-text-muted);
+  max-width: 600px;
+  font-size: var(--font-size-base);
+}
+
+.slider-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-arrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-arrow:first-child {
+  background-color: var(--color-text-main);
+  color: var(--color-text-light);
+  border-color: var(--color-text-main);
+}
+
+.btn-arrow:hover {
+  opacity: 0.8;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-wrapper {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.card-image-wrapper img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* 4. FOOTER */
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid var(--color-border);
+  padding: 4rem 2rem 2rem;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  max-width: 350px;
+}
+
+.footer-logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-col h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-col a {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.footer-col a:hover {
+  color: var(--color-text-main);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-text-main);
+  color: var(--color-text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+/* 1. Випадаюче підменю */
+.nav-item-has-dropdown {
+  position: relative;
+}
+
+/* 1. Напівпрозоре підменю з плавною анімацією */
+.nav-item-has-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.12); 
+  backdrop-filter: blur(8px);           
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  min-width: 170px;
+  list-style: none;
+  
+  /* Налаштування для плавної появи */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 100;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Плавна поява при наведенні */
+.nav-item-has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 2. Фіксована кнопка «Вгору»  */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-scroll-top:hover {
+  transform: translateY(-5px);
+  background-color: #333333;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* 3. Ефект для карток в "Why Choose Markly?"  */
+.card-image-wrapper {
+  position: relative;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.card-image-wrapper img {
+  opacity: 0.25;
+  transition: opacity 0.4s ease;
+}
+
+.card-image-wrapper::before {
+  content: "MARKLY BAGS";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-size: 13px;
+  color: #333333;
+  letter-spacing: 1.5px;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.card:hover .card-image-wrapper img {
+  opacity: 1;
+}
+
+.card:hover .card-image-wrapper::before {
+  opacity: 0;
+}
+
+/* 4. Пошуковий інпут  */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 0.4rem 2.2rem 0.4rem 1rem;
+  font-size: 14px;
+  color: #ffffff;
+  outline: none;
+  width: 150px;
+  transition: width 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+  width: 200px;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.search-btn {
+  position: absolute;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.search-btn:hover {
+  opacity: 1;
+}
+
+/* 5. МЕДІА-ЗАПИТИ ДЛЯ АДАПТИВНОСТІ */
+@media (max-width: 992px) {
+  .nav-container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    gap: 1rem; /* Зменшуємо відступи між посиланнями */
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .search-input {
+    width: 110px; /* Зменшуємо ширину пошуку */
+    padding: 0.3rem 2rem 0.3rem 0.8rem;
+    font-size: 13px;
+  }
+
+  .search-input:focus {
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: nowrap; /* Забороняємо перенос у 2-й рядок */
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .nav-links {
+    display: flex !important;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: 12px; /* Зменшуємо шрифт */
+    padding: 0.2rem;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .search-input {
+    width: 75px; /* Компактна ширина пошуку */
+    padding: 0.25rem 1.6rem 0.25rem 0.5rem;
+    font-size: 11px;
+  }
+
+  .search-input::placeholder {
+    font-size: 10px;
+  }
+
+  .search-input:focus {
+    width: 100px;
+  }
+
+  .search-btn {
+    right: 5px;
+    font-size: 11px;
+  }
+}
